@@ -27,9 +27,10 @@ func TestSampleDataPart2(t *testing.T) {
 }
 
 func TestDataPart2(t *testing.T) {
-	expected := 0
+	expected := 301
 	result := part2(false)
 	if result != expected {
 		t.Errorf("Failed - Expected %d, Got %d", expected, result)
 	}
 }
+

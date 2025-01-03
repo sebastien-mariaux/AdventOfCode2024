@@ -32,3 +32,10 @@ func SumList(list []int) int {
 	}
 	return sum
 }
+
+func DeleteAtIndex(slice []int, index int) []int {
+	newValues := make([]int, len(slice)-1)
+	copy(newValues, slice[:index])
+	copy(newValues[index:], slice[index+1:])
+	return newValues
+}
