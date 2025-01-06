@@ -11,26 +11,25 @@ func TestSampleDataPart1(t *testing.T) {
 }
 
 func TestDataPart1(t *testing.T) {
-	// 2335 is too low
-	expected := 0
+	expected := 2524
 	result := part1(false)
 	if result != expected {
 		t.Errorf("Failed - Expected %d, Got %d", expected, result)
 	}
 }
 
-// func TestSampleDataPart2(t *testing.T) {
-// 	expected := 0
-// 	result := part2(true)
-// 	if result != expected {
-// 		t.Errorf("Failed - Expected %d, Got %d", expected, result)
-// 	}
-// }
+func TestSampleDataPart2(t *testing.T) {
+	expected := 9
+	result := part2(true)
+	if result != expected {
+		t.Errorf("Failed - Expected %d, Got %d", expected, result)
+	}
+}
 
-// func TestDataPart2(t *testing.T) {
-// 	expected := 0
-// 	result := part2(false)
-// 	if result != expected {
-// 		t.Errorf("Failed - Expected %d, Got %d", expected, result)
-// 	}
-// }
+func TestDataPart2(t *testing.T) {
+	expected := 1873
+	result := part2(false)
+	if result != expected {
+		t.Errorf("Failed - Expected %d, Got %d", expected, result)
+	}
+}

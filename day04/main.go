@@ -7,8 +7,9 @@ import (
 	"strings"
 )
 
-
 func part1(sample bool) int {
+	// Not a great solution, but it works
+	// We make string from rows, cols and diagonals and count the number of matches for each
 	fmt.Println("start")
 	xmasRegex := `XMAS`
 	samxRegex := `SAMX`
@@ -96,6 +97,18 @@ func part1(sample bool) int {
 }
 
 func part2(sample bool) int {
-	// data := helpers.OpenInput(sample)
-	return 0
+	input := helpers.OpenInput(sample)
+	rows := strings.Split(input, "\n")
+	count := 0
+	for i := 1; i < len(rows)-1; i++ {
+		for j := 1; j < len(rows[i])-1; j++ {
+			if rows[i][j] == 'A' &&
+				(rows[i-1][j-1] == 'S' && rows[i+1][j+1] == 'M' || rows[i-1][j-1] == 'M' && rows[i+1][j+1] == 'S') &&
+				(rows[i-1][j+1] == 'S' && rows[i+1][j-1] == 'M' || rows[i-1][j+1] == 'M' && rows[i+1][j-1] == 'S') {
+				count++
+			}
+		}
+	}
+
+	return count
 }
